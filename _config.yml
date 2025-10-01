@@ -16,10 +16,12 @@ timezone: Asia/Shanghai
 
 title: 思想在拧紧 # the main title
 
-tagline: Hi, this is wa. I am documenting my learning notes in this blog. # it will display as the subtitle
+tagline: 
+  Hi, this is wa. I am documenting my learning notes in this blog. # it will display as the subtitle
 
-description: >- # used by seo meta and the atom feed
-  learning notes
+# used by seo meta and the atom feed
+description: >- 
+  learning notes.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
