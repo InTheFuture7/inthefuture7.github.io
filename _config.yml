@@ -2,6 +2,7 @@
 
 # Import the theme
 theme: jekyll-theme-chirpy
+math: true
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -157,6 +158,7 @@ baseurl: ""
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
+  gfm_quirks: [paragraph_end]
   footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
   syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
