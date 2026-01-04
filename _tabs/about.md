@@ -4,7 +4,42 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+<!-- # 个人简历 / Resume -->
 
-hello, 
+{: .prompt-info }
+
+
+## 🎓 教育背景
+
+- **[大学名称]** | [专业名称] | [学位] | 2019 - 2023
+- **[大学名称]** | [专业名称] | [学位] | 20XX - 20XX
+
+
+## 🛠️ 技能清单
+
+- **编程语言**: Python, Java, SQL
+- **框架 & 工具**: PyTorch, Git, Linux
+- **语言能力**: 英语 (CET-6), 普通话 (母语)
+
+## 💼 工作与项目经历
+
+### **项目名称 / 职位** | 20XX.XX - 20XX.XX
+**[项目角色/公司]**
+- 核心职责。
+- 解决的技术难题及方案（如：使用 XX 框架优化了 XX 性能，提升达 XX%）。
+- 获得的成果或产出。
+
+## 🏆 荣誉奖项
+
+- 20XX | [奖项名称 A]
+- 20XX | [奖项名称 B]
+
+## 📬 联系方式
+
+- **Email**: [yourname@example.com]
+- **GitHub**: [github.com/inthefuture7](https://github.com/inthefuture7)
+- **Location**: [城市, 中国]
+
+---
+
+> "Time flies, words alive."
