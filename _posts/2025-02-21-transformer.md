@@ -149,30 +149,6 @@ $$
 进一步可以推导出所有位置编码之间的关系，等式右边即为块对角矩阵，以四个元素为一个块。
 
 
-```python
-import torch
-import math
-class PositionalEncoding(torch.nn.Module):
-	def __init__(self, d_model, max_len=5000):
-		super(PositionalEncoding, self).__init__()
-		# 创建位置编码矩阵，大小为 [max_len, d_model]
-		pe = torch.zeros(max_len, d_model)
-		position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
-		div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0))/ d_model)
-		# 分奇偶计算
-		pe[:, 0::2] = torch.sin(position * div_term)
-		pe[:, 1::2] = torch.cos(position * div_term)
-		
-		pe = pe.unsqueeze(0)
-		self.register_buffer('pe', pe)
-	
-	def forward(self, x):
-		# x: tensor, shape [batch_size, seq_len, d_model]
-		seq_len = x.size(1)
-		x = x + self.pe[:, :seq_len]
-		return x
-```
-
 ###### 旋转位置编码（RoPE）
 
 相对位置编码：对 $A$ 矩阵处理
@@ -193,7 +169,6 @@ RoPE 是目前应用较为广泛的一种相对位置编码。
 > **Encoder 中的模块和多头注意力机制有什么关系？**
 > 每一层 Encoder 模块都包含：多头自注意力（Multi-Head Self-Attention）；前馈网络（Feed-Forward Network）
 
-![[Pasted image 20251207090025.png]]
 
 #### 自注意力及多头注意力机制
 
@@ -262,15 +237,12 @@ NAT 各位置独立采样，可能混合多种模态，产生： "我 非常 你
 ```
 
 
-
-
 encoder 和 decoder 的交互模块是 cross attn。
 
 交叉注意力输入的键和值为编码器的输出，查询为解码器中上一模块的输出。具体来说，decoder 输入为一个向量或特殊 token，然后经过多头自注意力掩码模块，得到一个 $q$，然后将经过encoder的输出的每个向量作为k和v，计算权重。
 
 原始论文中的解码器的输入为编码器最后一层的输出，也存在其他的变体，参考论文：Rethinking and Improving Natural Language Generation withLayer-Wise Multi-View Decoding
 
-![[Pasted image 20251210161713.png]]
 
 ## 训练
 
