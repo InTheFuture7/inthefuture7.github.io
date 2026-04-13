@@ -5,8 +5,6 @@ categories: [深度学习] #上级文档，下级文档
 tags: [注意力机制, 大语言模型]     # TAG
 ---
 
-# transformer 基础
-
 概要：简要记录 Encoder-Decoder 架构、seq2seq 模型、Attention 机制
 
 ## Encoder & Decoder
